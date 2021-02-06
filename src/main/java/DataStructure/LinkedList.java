@@ -1,4 +1,4 @@
-package ListExamples;
+package DataStructure;
 
 /*
  * A single linked list consists of zero or more nodes.

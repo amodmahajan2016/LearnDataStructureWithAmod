@@ -1,7 +1,7 @@
-package ListExamples;
+package DataStructure;
 
 /*
- * A node with two components-  First one is data another one is a pointer to next node.
+ * A node consists of two components. First one is data another one is a pointer to next node.
  * If a node does not point to any other node, it will be NULL or point to NULL.
  */
 public class Node {
@@ -19,4 +19,3 @@ public class Node {
 		next = null; 
 	}
 }
-
