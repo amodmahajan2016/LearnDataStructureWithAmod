@@ -48,6 +48,23 @@ public class LinkedList {
 			// Go to next node
 			currNode = currNode.next;
 		}
+		System.out.println();
+	}
+
+	// To reverse a Linked List
+	public LinkedList reverseList(LinkedList list) {
+		Node current;
+		Node previous = null;
+		Node next;
+		current = list.headNode;
+		while (current != null) {
+			next = current.next;
+			current.next = previous;
+			previous = current;
+			current = next;
+		}
+		list.headNode = previous;
+		return list;
 	}
 
 }
