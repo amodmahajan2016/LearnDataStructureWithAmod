@@ -66,5 +66,42 @@ public class LinkedList {
 		list.headNode = previous;
 		return list;
 	}
+	
+	// To delete a node from list
+	public LinkedList deleteNode(LinkedList list, int dataToBeDeleted)
+	{
+		// If the LinkedList is empty
+		if(list.headNode == null)
+			return list;
+		// Get a temp pointer to head node of list to traverse
+		Node cur = list.headNode;
+		// Check if head node is node to be deleted
+		if(cur.data == dataToBeDeleted)
+		{
+			list.headNode = headNode.next;
+			return list;
+		}
+		// Another Node reference to pointer to prev node
+		Node prev = null;
+		/* Need to traverse to list till we reach last of list or
+		 we found node to be deleted
+		 */
+		while(cur != null && cur.data != dataToBeDeleted)
+		{
+			prev = cur;
+			cur = cur.next;
+		}
+		/* If dataToBeDeleted is not found in list
+		 * then cur will point to null after traverse 
+		*/
+		if(cur == null)
+			return list;
+		/* If data is found in the list
+		 * then to delete the desired node we need to skip reference
+		 * of node to be deleted.
+		 */
+		prev.next = cur.next;
+		return list;
+	}
 
 }
